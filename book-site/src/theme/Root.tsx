@@ -5,7 +5,7 @@ export default function Root({children}) {
   return (
     <>
       {children}
-      <Chatbot backendUrl="http://localhost:8000" />
+      <Chatbot backendUrl="https://physical-ai-textbook-seven.vercel.app/" />
     </>
   );
 }

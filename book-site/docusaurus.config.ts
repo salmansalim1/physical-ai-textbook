@@ -1,16 +1,27 @@
-﻿import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+﻿import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+
+// ================================
+// CHANGE: Use environment variables to determine deployment platform
+// Set DEPLOY_ENV=GITHUB for GitHub Pages, otherwise Vercel is assumed
+const isGithubPages = process.env.DEPLOY_ENV === 'GITHUB';
+// ================================
 
 const config: Config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'Master the Future of Embodied Intelligence',
   favicon: 'img/favicon.ico',
 
-  url: 'https://rameezqadir.github.io',
-  baseUrl: '/physical-ai-textbook/',
+  // ================================
+  // CHANGE: Dynamic URL and baseUrl based on deployment platform
+  url: isGithubPages
+    ? 'https://github.com/salmansalim1'
+    : 'https://your-project-name.vercel.app',
+  baseUrl: isGithubPages ? '/physical-ai-textbook/' : '/',
+  // ================================
 
-  organizationName: 'rameezqadir',
+  organizationName: 'salmansalim1',
   projectName: 'physical-ai-textbook',
 
   onBrokenLinks: 'warn',
@@ -47,7 +58,7 @@ const config: Config = {
           label: 'Textbook',
         },
         {
-          href: 'https://github.com/rameezqadir/physical-ai-textbook',
+          href: 'https://github.com/salmansalim1/physical-ai-textbook',
           label: 'GitHub',
           position: 'right',
         },

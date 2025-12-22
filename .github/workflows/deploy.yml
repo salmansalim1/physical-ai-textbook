@@ -26,7 +26,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24.12.0
           cache: npm
           cache-dependency-path: book-site/package-lock.json
       
@@ -34,7 +34,9 @@ jobs:
         run: npm ci
       
       - name: Build website
-        run: npm run build
+        run: |
+          export DEPLOY_ENV=GITHUB
+          npm run build
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
