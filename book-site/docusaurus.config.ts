@@ -16,7 +16,7 @@ const config: Config = {
   // ================================
   // CHANGE: Dynamic URL and baseUrl based on deployment platform
   url: isGithubPages
-    ? 'https://github.com/salmansalim1'
+    ? 'https://salmansalim1.github.io'
     : 'https://physical-ai-textbook-lyart.vercel.app/',
   baseUrl: isGithubPages ? '/physical-ai-textbook/' : '/',
   // ================================
